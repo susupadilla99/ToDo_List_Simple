@@ -1,4 +1,24 @@
+// Environment variable
 const TRANSLATION_API_KEY = "AIzaSyDZcDl6tQyo9yqI9tTZKdLeDpM1VPdHGEc";
+const PROJECT_ID = "simple-translation-todo-list";
+
+// Import & instantiate Google Cloud Client library
+const sourceLanguage = 'en';
+const targetLanguage = 'ru';
+const text = 'Bread';
+
+const endpoint = `https://translation.googleapis.com/language/translate/v2?key=${TRANSLATION_API_KEY}&source=${sourceLanguage}&target=${targetLanguage}&q=${text}`;
+
+fetch(endpoint)
+  .then(response => response.json())
+  .then(data => {
+    const translatedText = data.data.translations[0].translatedText;
+    console.log(translatedText);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
 
 window.addEventListener("load", () => {
     const form = document.querySelector("#new-task-form");
