@@ -1,3 +1,5 @@
+const TRANSLATION_API_KEY = "AIzaSyDZcDl6tQyo9yqI9tTZKdLeDpM1VPdHGEc";
+
 window.addEventListener("load", () => {
     const form = document.querySelector("#new-task-form");
     const input = document.querySelector("#new-task-input");
